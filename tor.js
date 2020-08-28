@@ -44,7 +44,7 @@ function vote(){
           changing = false;
         } else {
           console.log('Error: A problem occured while attempting to change the IP Address.');
-          setTimeout(vote, rand * 60000);
+          setTimeout(vote, rand * 10000);
         }
       });
     }
