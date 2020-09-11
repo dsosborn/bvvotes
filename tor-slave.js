@@ -33,13 +33,13 @@ function vote() {
 
         //await page.screenshot({path: `./ss/latest.png`});
         count++;
-        console.log(`Voted number ${count}`);  
+        console.log(`Voted number ${count}`);
         setTimeout(vote, rand * 1000);
       } catch (e) {
         errors = true;
         console.log('an expection on page.evaluate ', e);
         console.log('waiting 60s for master to change');
-        setTimeout(vote, rand * 60000);
+        setTimeout(vote, 10000);
       }
       //current_ip_address = await page.evaluate(() => document.body.textContent.trim());
 
