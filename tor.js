@@ -11,8 +11,7 @@ function vote(){
         return;
     } else{
 (async () => {
-    count++;
-    console.log(`Voting number ${count}`)
+    
     let now = new Date();
     const nowish = dateFormat(now, "yyyy-mm-dd'_'hh-MMTT");
 
@@ -32,6 +31,8 @@ function vote(){
       await page.click('#awardVoteButton')
       await page.waitForNavigation()
       //await page.screenshot({path: `./ss/latest.png`});
+      count++;
+      console.log(`Voted number ${count}`)
       setTimeout(vote, rand * 1000);
     } catch (e) {
         errors = true;
