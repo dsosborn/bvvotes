@@ -59,7 +59,7 @@ function vote() {
         );
       }
       //current_ip_address = await page.evaluate(() => document.body.textContent.trim());
-      await page.screenshot({ path: `./ss/oops.png` });
+      //await page.screenshot({ path: `./ss/oops.png` });
 
       //console.log(current_ip_address);
       await browser.close();
