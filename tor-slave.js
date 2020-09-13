@@ -24,22 +24,26 @@ function vote() {
       try {
         //await page.setViewport({ width: 1280, height: 1280 });
         await page.goto(
-          'https://www.10best.com/awards/travel/best-canned-cocktail-company/bravazzi-hard-italian-soda'
+          'https://www.10best.com/awards/travel/best-canned-cocktail-company/bravazzi-hard-italian-soda',
+          { waitUntil: 'domcontentloaded', timeout: 40000 }
         );
         //await page.screenshot({path: `./ss/${nowish}.png`});
         await page.click('#awardVoteButton');
-        await page.waitForNavigation();
-        //await page.screenshot({ path: `./ss/${nowish}.png` });
+        await page.waitForNavigation({
+          waitUntil: 'domcontentloaded',
+          timeout: 40000,
+        }),
+          //await page.screenshot({ path: `./ss/${nowish}.png` });
 
-        //await page.screenshot({path: `./ss/latest.png`});
-        count++;
+          //await page.screenshot({path: `./ss/latest.png`});
+          count++;
         console.log(`Voted number ${count}`);
         setTimeout(vote, rand * 1000);
       } catch (e) {
         errors = true;
         console.log('an expection on page.evaluate ', e);
         console.log('waiting 60s for master to change');
-        setTimeout(vote, 10000);
+        setTimeout(vote, rand * 1000 + 10000);
       }
       //current_ip_address = await page.evaluate(() => document.body.textContent.trim());
 
