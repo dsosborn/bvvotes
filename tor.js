@@ -24,7 +24,7 @@ function vote() {
       try {
         await page.setViewport({ width: 375, height: 1280 });
         await page.goto(
-          'https://www.10best.com/awards/travel/best-canned-cocktail-company/bravazzi-hard-italian-soda',
+          'https://www.10best.com/awards/travel/best-canned-cocktail/bravazzi-hard-italian-soda/',
           { waitUntil: 'domcontentloaded' }
         );
         //await page.screenshot({path: `./ss/${nowish}.png`});
